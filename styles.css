@@ -1,33 +1,35 @@
-/* General Styling */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif; /* Change to your desired font */
-    color: #333; /* Change text color */
-    background-color: #f4f4f4; /* Background color for the page */
+    font-family: 'Arial', sans-serif; 
+    color: #333;
+    background-color: #f4f4f4; 
     line-height: 1.6;
 }
 
-/* Header Section */
+
 .header {
-    background-color: #ff69b4; /* Header background color */
-    color: white; /* Text color for the header */
+    background-color: #ff69b4; 
+    color: white; 
     padding: 20px;
     text-align: center;
 }
 
 .header h1 {
-    font-size: 2.5rem; /* Adjust the size of the header title */
+    font-size: 2.5rem; 
     margin: 0;
 }
 
 .header p {
-    font-size: 1.2rem; /* Subtitle font size */
+    font-size: 1.2rem; 
     margin-top: 10px;
 }
 
-/* Main Page Styling */
+h1 {
+    font-size: 100px;
+}
+
 .main-page {
-    background-color: #fbe9e7; /* Light background color */
+    background-color: #fbe9e7; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,14 +45,14 @@ body {
 }
 
 .placeholder {
-    color: #777; /* Placeholder text color */
+    color: #777; 
     font-style: italic;
 }
 
 button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #ff69b4; /* Button background color */
+    background-color: #ff69b4; 
     border: none;
     color: white;
     font-size: 16px;
@@ -60,41 +62,25 @@ button {
 }
 
 button:hover {
-    background-color: #ff85c1; /* Hover color */
+    background-color: #ff85c1; 
 }
 
-/* Gallery Page Styling */
+
 .gallery-page {
-    background-color: #fff0f5; /* Soft pinkish background */
+    background-color: #fff0f5; 
     padding: 20px;
 }
 
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 10px;
-}
 
-.gallery-item {
-    background-color: #ffebf2; /* Light pink background for items */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    border: 2px dashed #ff69b4; /* Dashed border around items */
-    font-size: 14px;
-    color: #ff69b4;
-    text-align: center;
-}
 
 button {
     display: block;
     margin: 20px auto;
 }
 
-/* Footer Section */
+
 .footer {
-    background-color: #ff69b4; /* Footer background */
+    background-color: #ff69b4; 
     color: white;
     padding: 10px;
     text-align: center;
@@ -104,29 +90,28 @@ button {
     margin: 0;
 }
 
-/* Customizing Links */
+
 a {
     text-decoration: none;
-    color: #ff69b4; /* Link color */
+    color: #ff69b4; 
     font-weight: bold;
 }
 
 a:hover {
-    color: #ff85c1; /* Hover color for links */
+    color: #ff85c1; 
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 768px) {
     .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller columns for smaller screens */
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
     }
 
     .container {
-        width: 90%; /* Container width adjustment for smaller screens */
+        width: 90%; 
     }
 }
 
-/* Adjustable Section - Blog Posts */
 .blog-post {
     background: white;
     padding: 20px;
@@ -136,17 +121,17 @@ a:hover {
 }
 
 .blog-post h2 {
-    color: #ff69b4; /* Post title color */
+    color: #ff69b4; 
     font-size: 1.8rem;
 }
 
 .blog-post p {
-    color: #333; /* Post content text color */
+    color: #333; 
     font-size: 1rem;
     line-height: 1.6;
 }
 
-/* Comments Section */
+
 .comment-section {
     margin-top: 30px;
 }
@@ -164,10 +149,10 @@ a:hover {
 
 .comment .author {
     font-weight: bold;
-    color: #ff69b4; /* Comment author color */
+    color: #ff69b4; 
 }
 
-/* Customizing Forms */
+
 input[type="text"], input[type="email"], textarea {
     width: 100%;
     padding: 10px;
@@ -182,7 +167,7 @@ textarea {
 }
 
 input[type="submit"] {
-    background-color: #ff69b4; /* Button background */
+    background-color: #ff69b4; 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -193,5 +178,10 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #ff85c1; /* Hover color for submit button */
+    background-color: #ff85c1; 
+}
+
+.sizable {
+    width: 200px;
+    height: 250px;
 }
