@@ -5,117 +5,373 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галерея</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #fff0f5;
+            line-height: 1.6;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery-item .overlay p {
+            margin: 0;
+            font-size: 1.2rem;
+            padding: 0 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #ff85c1;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-header h1 {
+            font-size: 2.5rem;
+            color: #ff69b4;
+            margin-bottom: 10px;
+        }
+
+        .gallery-header p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-header h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-header p {
+                font-size: 1rem;
+            }
+
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
 </head>
 <body class="gallery-page">
-    <div class="gallery-container">
-        <img class="sizable" src="images/photo_5783037666244281982_y.jpg">
-        <img class="sizable" src="images/photo_5789667721359772020_y.jpg">
-        <img class="sizable" src="images/photo_5764737819913340754_y.jpg">
-        <img class="sizable" src="images/photo_5769163985575328489_y.jpg">
-        <img class="sizable" src="images/photo_5778514125083754627_y.jpg">
-        <img class="sizable" src="images/photo_5782666976206898352_y.jpg">
-        <img class="sizable" src="images/photo_5785013449984688041_y.jpg">
-        <img class="sizable" src="images/photo_5789667721359772019_y.jpg">
-        <img class="sizable" src="images/photo_5789667721359772020_y.jpg">
-        <img class="sizable" src="images/photo_5789667721359772021_y.jpg">
-        <img class="sizable" src="images/photo_5789667721359772022_y.jpg">
-        <img class="sizable" src="images/photo_5789667721359772023_y.jpg">
-        <img class="sizable" src="images/photo_5789762047431524946_y.jpg">
-        <img class="sizable" src="images/photo_5792013847245210296_y.jpg">
-        <img class="sizable" src="images/photo_5794185425659741269_y.jpg">
-        <img class="sizable" src="images/photo_5794437501585309947_y.jpg">
-        <img class="sizable" src="images/photo_5800748174342734516_y.jpg">
-        <img class="sizable" src="images/photo_5814182252224037553_y.jpg">
-        <img class="sizable" src="images/photo_5816790753366624162_y.jpg">
-        <img class="sizable" src="images/photo_5821313482778327473_y.jpg">
-        <img class="sizable" src="images/photo_5823171837817895647_y.jpg">
-        <img class="sizable" src="images/photo_5909035471084831860_y.jpg">
-        <img class="sizable" src="images/photo_5922309243606778038_y.jpg">
-        <img class="sizable" src="images/photo_5872749491424181430_y.jpg">
-        <img class="sizable" src="images/photo_5904586043879966022_y.jpg">
-        <img class="sizable" src="images/photo_5938105450421668214_y.jpg">
-        <img class="sizable" src="images/photo_5947081141796324028_y.jpg">
-        <img class="sizable" src="images/photo_5791867899961525034_y.jpg">
-        <img class="sizable" src="images/photo_5802955804712747700_y.jpg">
-        <img class="sizable" src="images/photo_5802955804712747701_y.jpg">
-        <img class="sizable" src="images/photo_5814436613072209733_y.jpg">
-        <img class="sizable" src="images/photo_5841552691527009677_y.jpg">
-        <img class="sizable" src="images/photo_5841552691527009678_y.jpg">
-        <img class="sizable" src="images/photo_5863952844351194729_y.jpg">
-        <img class="sizable" src="images/photo_5880002522956024086_y.jpg">
-        <img class="sizable" src="images/photo_5897469871481014823_y.jpg">
-        <img class="sizable" src="images/photo_5897469871481014825_y.jpg">
-        <img class="sizable" src="images/photo_5897469871481014826_y.jpg">
-        <img class="sizable" src="images/photo_5902423871443814246_y.jpg">
-        <img class="sizable" src="images/photo_5902423871443814252_y.jpg">
-        <img class="sizable" src="images/photo_5915733691626276325_y.jpg">
-        <img class="sizable" src="images/photo_5915733691626276326_y.jpg">
-        <img class="sizable" src="images/photo_5947126573960381576_y.jpg">
-        <img class="sizable" src="images/photo_5949285795754002231_y.jpg">
-        <img class="sizable" src="images/photo_5972221526705031229_y.jpg">
-        <img class="sizable" src="images/photo_5978809018694616866_y.jpg">
-        <img class="sizable" src="images/photo_5994781911874126830_y.jpg">
-        <img class="sizable" src="images/photo_6016830074948534448_y.jpg">
-        <img class="sizable" src="images/photo_5927219726960936481_y.jpg">
-        <img class="sizable" src="images/photo_5960764765867460008_y.jpg">
-        <img class="sizable" src="images/photo_5960764765867460010_y.jpg">
-        <img class="sizable" src="images/photo_5960764765867460011_y.jpg">
-        <img class="sizable" src="images/photo_5996840833296484403_y.jpg">
-        <img class="sizable" src="images/photo_5969767884903270309_y.jpg">
-        <img class="sizable" src="images/photo_5857113126112183184_y.jpg">
-        <img class="sizable" src="images/photo_5902499308249400709_y.jpg">
-        <img class="sizable" src="images/photo_5902499308249400711_y.jpg">
-        <img class="sizable" src="images/photo_5902499308249400712_y.jpg">
-        <img class="sizable" src="images/photo_5922713743626716735_y.jpg">
-        <img class="sizable" src="images/photo_5922713743626716751_y.jpg">
-        <img class="sizable" src="images/photo_6016829267494683367_y.jpg">
-        <img class="sizable" src="images/photo_6046414578482528604_y.jpg">
-        <img class="sizable" src="images/photo_5832509972892730929_y.jpg">
-        <img class="sizable" src="images/photo_5789755489016464163_y.jpg">
-        <img class="sizable" src="images/photo_5830020480998949844_y.jpg">
-        <img class="sizable" src="images/photo_5832509972892730927_y.jpg">
-        <img class="sizable" src="images/photo_5832509972892730928_y.jpg">
-        <img class="sizable" src="images/photo_5988029149542990086_y.jpg">
-        
-        <img class="sizable" src="images/photo_5926904205778470618_y.jpg">
-        <img class="sizable" src="images/photo_5904586043879966004_y.jpg">
-        <img class="sizable" src="images/photo_5906694370311128119_y.jpg">
-        <img class="sizable" src="images/photo_5900181241385305920_x.jpg">
-        <img class="sizable" src="images/photo_5967348169048178896_x.jpg">
-        <img class="sizable" src="images/photo_5895369864401504206_y.jpg">
-        <img class="sizable" src="images/photo_6035242788725047966_y.jpg">
-        <img class="sizable" src="images/photo_5922713743626716773_y.jpg">
-        <img class="sizable" src="images/photo_6001224495962113998_y.jpg">
-        <img class="sizable" src="images/photo_5944782196126631033_y.jpg">
-        <img class="sizable" src="images/photo_5915733691626276207_y.jpg">
-        <img class="sizable" src="images/photo_5774110615374251782_y.jpg">
-        <img class="sizable" src="images/photo_5839300891713325251_x.jpg">
-        <img class="sizable" src="images/photo_5963325335175020935_y.jpg">
-        <img class="sizable" src="images/photo_6032708474552566196_y.jpg">
-        <img class="sizable" src="images/photo_5940455364468262580_y.jpg">
-        <img class="sizable" src="images/photo_5929002606540211466_y.jpg">
-        <img class="sizable" src="images/photo_5839300891713325234_y.jpg">
-        <img class="sizable" src="images/photo_6051007113997698734_x.jpg">
-        <img class="sizable" src="images/photo_5839300891713325251_x.jpg">
-        <img class="sizable" src="images/photo_5944782196126631033_y.jpg">
-        <img class="sizable" src="images/photo_6037348722859426521_y.jpg">
-        <img class="sizable" src="images/photo_6014803821047432480_y.jpg">
-        <img class="sizable" src="images/photo_5774110615374251782_y.jpg">
-        <img class="sizable" src="images/photo_5922713743626716773_y.jpg">
-        <img class="sizable" src="images/photo_5926904205778470618_y.jpg">
-        <img class="sizable" src="images/photo_6037348722859426521_y.jpg">
-        <img class="sizable" src="images/photo_6037582102792356991_y.jpg">
-        <img class="sizable" src="images/photo_5944782196126631033_y.jpg">
-        <img class="sizable" src="images/photo_6012335129680266518_y.jpg">
-        <img class="sizable" src="images/photo_5963325335175020935_y.jpg">
-
-
-
-
-
-
-
+    <div class="gallery-header">
+        <h1>Галерея Даши</h1>
     </div>
-    <button onclick="location.href='index.html'">Вернутся</button>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="images/photo_5783037666244281982_y.jpg" alt="Photo 1">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5789667721359772020_y.jpg" alt="Photo 2">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5764737819913340754_y.jpg" alt="Photo 3">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5769163985575328489_y.jpg" alt="Photo 4">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5778514125083754627_y.jpg" alt="Photo 5">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5782666976206898352_y.jpg" alt="Photo 6">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5785013449984688041_y.jpg" alt="Photo 7">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5789667721359772019_y.jpg" alt="Photo 8">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5789667721359772020_y.jpg" alt="Photo 9">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5789667721359772021_y.jpg" alt="Photo 10">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5789667721359772022_y.jpg" alt="Photo 11">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5789667721359772023_y.jpg" alt="Photo 12">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5789762047431524946_y.jpg" alt="Photo 13">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5792013847245210296_y.jpg" alt="Photo 14">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5794185425659741269_y.jpg" alt="Photo 15">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5794437501585309947_y.jpg" alt="Photo 16">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5800748174342734516_y.jpg" alt="Photo 17">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5814182252224037553_y.jpg" alt="Photo 18">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5816790753366624162_y.jpg" alt="Photo 19">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5821313482778327473_y.jpg" alt="Photo 20">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5823171837817895647_y.jpg" alt="Photo 21">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5909035471084831860_y.jpg" alt="Photo 22">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5922309243606778038_y.jpg" alt="Photo 23">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5872749491424181430_y.jpg" alt="Photo 24">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5904586043879966022_y.jpg" alt="Photo 25">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5938105450421668214_y.jpg" alt="Photo 26">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5947081141796324028_y.jpg" alt="Photo 27">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5791867899961525034_y.jpg" alt="Photo 28">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5802955804712747700_y.jpg" alt="Photo 29">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5802955804712747701_y.jpg" alt="Photo 30">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5814436613072209733_y.jpg" alt="Photo 31">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5841552691527009677_y.jpg" alt="Photo 32">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5841552691527009678_y.jpg" alt="Photo 33">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5863952844351194729_y.jpg" alt="Photo 34">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5880002522956024086_y.jpg" alt="Photo 35">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5897469871481014823_y.jpg" alt="Photo 36">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5897469871481014825_y.jpg" alt="Photo 37">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo_5897469871481014826_y.jpg" alt="Photo 38">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_5994815876475504498_y.jpg" alt="Photo 39">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_6001224495962113998_y.jpg" alt="Photo 40">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_6008308838358432485_y.jpg" alt="Photo 41">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_6010195213764642539_y.jpg" alt="Photo 42">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_6012335129680266518_y.jpg" alt="Photo 43">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_6014803821047432472_y.jpg" alt="Photo 44">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_6032708474552566196_y.jpg" alt="Photo 45">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_6035242788725047966_y.jpg" alt="Photo 46">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_6037582102792356991_y.jpg" alt="Photo 47">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_6046414578482528604_y.jpg" alt="Photo 48">
+            <div class="overlay">
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images\photo_6016995937995569620_y.jpg" alt="Photo 49">
+            <div class="overlay">
+            </div>
+        </div>
+
+    <button class="back-button" onclick="location.href='index.html'">Вернуться</button>
 </body>
 </html>

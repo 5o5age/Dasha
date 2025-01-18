@@ -1,200 +1,87 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif; 
+    font-family: 'Arial', sans-serif;
     color: #333;
-    background-color: #f4f4f4; 
+    background-color: #f4f4f4;
     line-height: 1.6;
 }
 
-
-.header {
-    background-color: #ff69b4; 
-    color: white; 
-    padding: 20px;
-    text-align: center;
-}
-
-.header h1 {
-    font-size: 2.5rem; 
-    margin: 0;
-}
-
-.header p {
-    font-size: 1.2rem; 
-    margin-top: 10px;
-}
-
-h1 {
-    font-size: 100px;
-}
-
 .main-page {
-    background-color: #fbe9e7; 
+    background-color: #fbe9e7;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
+    padding: 20px;
 }
 
 .container {
     background: white;
-    padding: 20px;
+    padding: 50px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Scales to screen size */
+    max-width: 600px; /* Optional max width for larger screens */
 }
 
-.placeholder {
-    color: #777; 
-    font-style: italic;
+h1, h2, h3 {
+    font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive font sizes */
+    margin: 10px 0;
 }
 
 button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #ff69b4; 
+    background-color: #ff69b4;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    width: 100%; /* Full-width buttons for smaller screens */
+    max-width: 300px; /* Limit size on large screens */
 }
 
 button:hover {
-    background-color: #ff85c1; 
-}
-
-
-.gallery-page {
-    background-color: #fff0f5; 
-    padding: 20px;
-}
-
-
-
-button {
-    display: block;
-    margin: 20px auto;
-}
-
-
-.footer {
-    background-color: #ff69b4; 
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-.footer p {
-    margin: 0;
-}
-
-
-a {
-    text-decoration: none;
-    color: #ff69b4; 
-    font-weight: bold;
-}
-
-a:hover {
-    color: #ff85c1; 
-}
-
-
-@media (max-width: 768px) {
-    .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
-    }
-
-    .container {
-        width: 90%; 
-    }
-}
-
-.blog-post {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.blog-post h2 {
-    color: #ff69b4; 
-    font-size: 1.8rem;
-}
-
-.blog-post p {
-    color: #333; 
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-
-.comment-section {
-    margin-top: 30px;
-}
-
-.comment {
-    background-color: #fbe9e7;
-    border-left: 4px solid #ff69b4;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.comment p {
-    font-size: 1rem;
-}
-
-.comment .author {
-    font-weight: bold;
-    color: #ff69b4; 
-}
-
-
-input[type="text"], input[type="email"], textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-}
-
-textarea {
-    height: 100px;
-}
-
-input[type="submit"] {
-    background-color: #ff69b4; 
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-input[type="submit"]:hover {
-    background-color: #ff85c1; 
+    background-color: #ff85c1;
 }
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible grid columns */
-    grid-gap: 10px; /* Space between images */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
 }
 
 .sizable {
-    max-width: 100%;
+    width: 100%; /* Ensures images are responsive */
     height: auto;
+    border-radius: 5px;
+    object-fit: cover; /* Ensures images fill their container */
 }
 
 .side-images {
-    display: flex;
-    flex-direction: column;
-    max-width: 10%;
+    display: block;
+    max-width: 90%; /* Adjust image width for smaller screens */
+    margin: 10px auto;
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
