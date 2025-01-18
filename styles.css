@@ -181,7 +181,19 @@ input[type="submit"]:hover {
     background-color: #ff85c1; 
 }
 
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible grid columns */
+    grid-gap: 10px; /* Space between images */
+}
+
 .sizable {
-    width: 200px;
-    height: 250px;
+    max-width: 100%;
+    height: auto;
+}
+
+.side-images {
+    display: flex;
+    flex-direction: column;
+    max-width: 10%;
 }
